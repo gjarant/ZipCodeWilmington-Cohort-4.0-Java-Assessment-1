@@ -9,7 +9,9 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+
+        String camelCaseRun = str.substring(0,1). toUpperCase()+ str.substring(1);
+        return camelCaseRun;
     }
 
     /**
@@ -17,7 +19,10 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        StringBuilder reverseString = new StringBuilder(str);
+
+        return reverseString.reverse().toString();
+
     }
 
     /**
@@ -25,7 +30,13 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+
+        String reverseString = reverse(str);
+
+        String camelCaseRun = camelCase(reverseString);
+
+
+        return camelCaseRun;
     }
 
 
@@ -34,7 +45,8 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+
+        return str.substring(1, str.length()-1);
     }
 
     /**
@@ -42,6 +54,17 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        StringBuilder upperAndLower = new StringBuilder(str);
+        for(int i = 0; i < upperAndLower.length(); i++){
+            char character = upperAndLower.charAt(i);
+
+            if(Character.isUpperCase(character)){
+                upperAndLower.setCharAt(i, Character.toLowerCase(character));
+            }else {
+                upperAndLower.setCharAt(i, Character.toUpperCase(character));
+            }
+        }
+
+        return upperAndLower.toString();
     }
 }

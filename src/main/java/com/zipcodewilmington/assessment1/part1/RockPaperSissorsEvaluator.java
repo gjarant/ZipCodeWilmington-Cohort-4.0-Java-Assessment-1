@@ -13,7 +13,16 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+
+        if (handSign.equals("paper")) {
+            return "scissor";
+        } else if (handSign.equals("paper")) {
+            return "scissor";
+        } else if (handSign.equals("rock")) {
+            return "paper";
+        }
+
+        return handSign;
     }
 
     /**
@@ -21,7 +30,14 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        if (handSign.equals("paper")) {
+            return "rock";
+        } else if (handSign.equals("scissors")) {
+            return "paper";
+        } else if (handSign.equals("rock")) {
+            return "scissors";
+        }
+        return handSign;
     }
 
     /**
@@ -30,6 +46,31 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        if (handSignOfPlayer1.equals(handSignOfPlayer2)) {
+            return "tie";
+        }
+        else if(handSignOfPlayer1.equals("rock")) {
+                if (handSignOfPlayer2.equals("scissor")) {
+                    return "rock";
+                } else if (handSignOfPlayer2.equals("paper")) {
+                    return "paper";
+                }
+        }
+        else if (handSignOfPlayer1.equals("scissor")) {
+                if (handSignOfPlayer2.equals("rock")) {
+                    return "rock";
+                } else if (handSignOfPlayer2.equals("paper")) {
+                    return "scissor";
+                }
+        }
+        else if (handSignOfPlayer1.equals("paper")) {
+            if (handSignOfPlayer2.equals("rock")) {
+                return "paper";
+            } else if (handSignOfPlayer2.equals("scissor")) {
+                return "scissor";
+            }
+        }
+        return "What";
+        }
     }
-}
+
