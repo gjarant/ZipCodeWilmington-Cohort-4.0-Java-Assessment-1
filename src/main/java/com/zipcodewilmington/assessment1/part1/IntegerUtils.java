@@ -13,7 +13,7 @@ public class IntegerUtils {
     public static Integer getSumOfN(Integer n) {
         int sumThemAll = 0;
 
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i <= n; i++){
             sumThemAll += i;
         }
         return sumThemAll;

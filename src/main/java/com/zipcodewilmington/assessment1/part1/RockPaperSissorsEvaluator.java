@@ -50,24 +50,24 @@ public class RockPaperSissorsEvaluator {
             return "tie";
         }
         else if(handSignOfPlayer1.equals("rock")) {
-                if (handSignOfPlayer2.equals("scissor")) {
+                if (handSignOfPlayer2.equals("scissors")) {
                     return "rock";
                 } else if (handSignOfPlayer2.equals("paper")) {
                     return "paper";
                 }
         }
-        else if (handSignOfPlayer1.equals("scissor")) {
+        else if (handSignOfPlayer1.equals("scissors")) {
                 if (handSignOfPlayer2.equals("rock")) {
                     return "rock";
                 } else if (handSignOfPlayer2.equals("paper")) {
-                    return "scissor";
+                    return "scissors";
                 }
         }
         else if (handSignOfPlayer1.equals("paper")) {
             if (handSignOfPlayer2.equals("rock")) {
                 return "paper";
-            } else if (handSignOfPlayer2.equals("scissor")) {
-                return "scissor";
+            } else if (handSignOfPlayer2.equals("scissors")) {
+                return "scissors";
             }
         }
         return "What";
